@@ -2,6 +2,7 @@ package com.driver;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class StudentService {
     public void addTeacher(Teacher teacher){
         repository.addTeacher(teacher);
     }
-    public void addStudentTeacherPair(String student , String teacher){
+    public void addStudentTeacherPair(String student, String teacher){
         repository.addStudentTeacherPair(student,teacher);
     }
     public Student getStudentByName(String name){
@@ -25,11 +26,11 @@ public class StudentService {
     public Teacher getTeacherByName(String name){
         return repository.getTeacherByName(name);
     }
-    public List<String> getStudentByTeacherName(String teacher){
-        return repository.getStudentByTeacherName(teacher);
+    public List<String> getStudentsByTeacherName(String teacher){
+        return repository.getStudentsByTeacherName(teacher);
     }
     public List<String> getAllStudents(){
-        return repository.getAllStudent();
+        return repository.getAllStudents();
     }
     public void deleteTeacherByName(String teacher){
         repository.deleteTeacherByName(teacher);
